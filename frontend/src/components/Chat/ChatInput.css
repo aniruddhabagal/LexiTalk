@@ -1,0 +1,100 @@
+.chat-input-container {
+  padding: 1rem;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chat-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.chat-text-input {
+  flex-grow: 1;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 1rem;
+}
+
+.chat-text-input:focus {
+  outline: none;
+  border-color: #2196f3;
+}
+
+.send-button {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0 1.25rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.send-button:hover {
+  background-color: #1e88e5;
+}
+
+.send-button:disabled {
+  background-color: #bbdefb;
+  cursor: not-allowed;
+}
+
+.record-button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 20px;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.record-button::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.record-button.recording {
+  background-color: #e53935;
+  animation: pulse 1.5s infinite;
+}
+
+.record-button.recording::before {
+  animation: blink 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
