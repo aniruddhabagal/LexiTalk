@@ -3,6 +3,7 @@
   border-radius: 12px;
   max-width: 80%;
   animation: fadeIn 0.3s ease-in-out;
+  margin-bottom: 1rem;
 }
 
 @keyframes fadeIn {
@@ -35,6 +36,11 @@
 .message-text {
   margin-bottom: 0.5rem;
   line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+.message-audio {
+  margin-top: 0.5rem;
 }
 
 .play-audio-button {
@@ -45,7 +51,9 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.8rem;
-  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .play-audio-button:hover {
@@ -55,6 +63,46 @@
 .play-audio-button:disabled {
   background-color: #a5d6a7;
   cursor: not-allowed;
+}
+
+.play-audio-button::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 0 5px 8px;
+  border-color: transparent transparent transparent white;
+}
+
+.generating-audio {
+  font-size: 0.8rem;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.generating-audio::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #ddd;
+  border-top-color: #888;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.audio-error {
+  font-size: 0.8rem;
+  color: #e53935;
 }
 
 .message-timestamp {

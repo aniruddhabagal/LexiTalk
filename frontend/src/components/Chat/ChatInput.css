@@ -6,6 +6,12 @@
   gap: 0.5rem;
 }
 
+.input-language-indicator {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
 .chat-form {
   display: flex;
   gap: 0.5rem;
