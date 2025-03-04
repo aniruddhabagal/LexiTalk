@@ -1,10 +1,22 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createLogger } from "./utils/logger";
+import { APP_CONFIG } from "./config/appConfig";
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
+import App from "./App";
+import "./index.css";
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+const logger = createLogger("App");
+
+logger.info("Application initializing", {
+  version: APP_CONFIG.VERSION,
+  environment: import.meta.env.MODE,
+});
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <ErrorBoundary>
+      <App />
+    </ErrorBoundary>
+  </React.StrictMode>
+);
